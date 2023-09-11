@@ -1,0 +1,7 @@
+#ifndef FUNCIONES_H_INCLUDED
+#define FUNCIONES_H_INCLUDED
+
+void Juego();
+
+
+#endif // FUNCIONES_H_INCLUDED

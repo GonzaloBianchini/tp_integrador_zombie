@@ -1,0 +1,31 @@
+#ifndef MENU_PRINCIPAL_H
+#define MENU_PRINCIPAL_H
+
+#include <SFML/Graphics.hpp>
+
+#define Item 5
+
+
+class MENU_PRINCIPAL: public sf::Drawable
+{
+public:
+    MENU_PRINCIPAL(float width, float height);
+    virtual ~MENU_PRINCIPAL();
+
+    void draw(sf::RenderTarget&target,sf::RenderStates states)const override;
+    void up();
+    void down();
+    int GetPressedItem()
+    {
+        return seleccion_item;
+    }
+
+protected:
+
+private:
+    int seleccion_item;
+    sf::Font font_item;
+    sf::Text menu_p[Item];
+};
+
+#endif // MENU_PRINCIPAL_H
