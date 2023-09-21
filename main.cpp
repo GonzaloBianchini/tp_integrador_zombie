@@ -16,7 +16,7 @@ int main()
     sf::Font font;
     if (!font.loadFromFile("font/Riot Act 2.otf"))
     {
-        // error...
+        std::cout<<"Error al cargar texto"<<std::endl;
     }
     sf::Text Text;
     Text.setFont(font);

@@ -26,6 +26,8 @@ private:
     int seleccion_item;
     sf::Font font_item;
     sf::Text menu_p[Item];
+    sf::Sprite _fondo_menu;
+    sf::Texture _texture_menu;
 };
 
 #endif // MENU_PRINCIPAL_H

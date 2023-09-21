@@ -1,11 +1,12 @@
 #include "Funciones.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "GAME_PLAY.h"
 
 
 void Juego()
 {
-sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
+    sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
     window.setFramerateLimit(60);
 
     sf::Sprite fondo;
@@ -18,6 +19,8 @@ sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
     }
     fondo.setTexture(_fondo);
 
+    GAME_PLAY gp;
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -29,10 +32,14 @@ sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
                 window.close();
         }
 
+        gp.update();
+        gp.cmd();
+
+
         window.clear(sf::Color::Black);
 
-          window.draw(fondo);
-
+        window.draw(fondo);
+        gp.draw(window);
 
 
         window.display();
