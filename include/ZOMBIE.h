@@ -1,9 +1,10 @@
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
 #include <SFML/Graphics.hpp>
+#include"Colisionable.h"
 
 
-class ZOMBIE//: public sf::Drawable
+class ZOMBIE: public Colisionable//: public sf::Drawable
 {
 public:
     ZOMBIE();
@@ -14,6 +15,8 @@ public:
     sf::Sprite& getDraw();
     void suelo(float x, float y);
     float getjump_force();
+
+    sf::FloatRect getBounds() const override;
 
 protected:
 

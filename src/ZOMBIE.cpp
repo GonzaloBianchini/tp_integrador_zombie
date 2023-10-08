@@ -68,7 +68,7 @@ void ZOMBIE::mobility()
 {
     if(_estado==ESTADOS::QUIETO)
     {
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
         {
             _estado=ESTADOS::SALTANDO;
             _jump_force=25;
@@ -106,4 +106,9 @@ void ZOMBIE::suelo(float x, float y)
 float ZOMBIE::getjump_force()
 {
     return _jump_force;
+}
+
+sf::FloatRect ZOMBIE::getBounds()const
+{
+    return _sprite_zombie.getGlobalBounds();
 }

@@ -1,0 +1,11 @@
+#include "GESTOR_PLANTAS.h"
+
+GESTOR_PLANTAS::GESTOR_PLANTAS()
+{
+    //ctor
+}
+
+GESTOR_PLANTAS::~GESTOR_PLANTAS()
+{
+    //dtor
+}

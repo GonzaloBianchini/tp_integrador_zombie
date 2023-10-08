@@ -4,6 +4,7 @@
 #include "GAME_PLAY.h"
 
 
+
 void Juego()
 {
     sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
