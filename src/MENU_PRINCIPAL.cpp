@@ -1,4 +1,5 @@
 #include "MENU_PRINCIPAL.h"
+#include "SubMenu.h"
 #include<iostream>
 
 MENU_PRINCIPAL::MENU_PRINCIPAL(float width, float height)
@@ -75,4 +76,91 @@ void MENU_PRINCIPAL::down()
         seleccion_item++;
         menu_p[seleccion_item].setColor(sf::Color::Green);
     }
+}
+
+void MENU_PRINCIPAL::Opciones()
+{
+    sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
+    window.setFramerateLimit(60);
+
+    // *******************Menu************************
+    MENU_PRINCIPAL menu_p(window.getSize().x, window.getSize().y);
+    SubMenu sub_menu(window.getSize().x, window.getSize().y);
+    // *******************Titulo**********************
+    sf::Font font;
+
+    if (!font.loadFromFile("Font/Riot Act 2.otf"))
+    {
+        // error...
+    }
+    sf::Text Text;
+    Text.setFont(font);
+    Text.setPosition(sf::Vector2f(600 / 3.5, 40));
+    Text.setCharacterSize(80);
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            switch (event.type)
+            {
+            case sf::Event::KeyReleased:
+                switch (event.key.code)
+                {
+                case sf::Keyboard::Up:
+                    menu_p.up();
+                    break;
+                case sf::Keyboard::Down:
+                    menu_p.down();
+                    break;
+                case sf::Keyboard::Return:
+                    switch (menu_p.GetPressedItem())
+                    {
+                    case 0:
+                       std::cout << "INICIO" << std::endl;
+                        window.close();
+                        sub_menu.Opciones();
+
+
+
+                        break;
+                    case 1:
+                        std::cout << "ESTADISTICA" << std::endl;
+                        break;
+                    case 2:
+                        std::cout << "OPCIONES" << std::endl;
+                        break;
+                    case 3:
+                        std::cout << "REGLAMENTO" << std::endl;
+                        break;
+                    case 4:
+                        std::cout << "CRÉDITO" << std::endl;
+                        break;
+                    }
+                    break;
+
+                }
+                break;
+
+            }
+
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear(sf::Color::Black);
+
+        Text.setString("Zombies VS PlantaZ");
+
+
+        window.draw(menu_p);
+        window.draw(Text);
+
+
+
+        window.display();
+    }
+
+
 }

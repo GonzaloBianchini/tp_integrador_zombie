@@ -19,6 +19,7 @@ public:
     {
         return seleccion_item;
     }
+     void Opciones();
 
 protected:
 

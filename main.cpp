@@ -7,7 +7,13 @@ using namespace std;
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
+     sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
+   window.setFramerateLimit(60);
+    MENU_PRINCIPAL menu(window.getSize().x,window.getSize().y);
+    //SubMenu sub_menu(window.getSize().x, window.getSize().y);
+    menu.Opciones();
+}
+   /* sf::RenderWindow window(sf::VideoMode(1220, 800), "Zombies vs PlantaZ");
     window.setFramerateLimit(60);
 
     // *******************Menu************************
@@ -86,3 +92,4 @@ int main()
 
     return 0;
 }
+*/

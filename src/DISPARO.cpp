@@ -10,6 +10,11 @@ Disparo::Disparo(TIPO tipo,sf::Vector2f pos,bool direct)
     initAnimation();
 }
 
+Disparo::Disparo()
+{
+
+}
+
 Disparo::~Disparo()
 {
 

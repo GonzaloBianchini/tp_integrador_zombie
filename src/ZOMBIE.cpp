@@ -32,7 +32,7 @@ void ZOMBIE::update()
         _xtexture = _xtexture*56.60;
         //std::cout<<_xtexture<<std::endl;
         _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,189.50,56.55,94.75));
-        _sprite_zombie.move(1,0);
+        _sprite_zombie.move(4,0);
         _estado=ESTADOS::QUIETO;
 
         break;
@@ -43,7 +43,7 @@ void ZOMBIE::update()
         _xtexture = _xtexture*56.60;
         //std::cout<<_xtexture<<std::endl;
         _sprite_zombie.setTextureRect(sf::IntRect(_xtexture,284.25,56.55,94.75));
-        _sprite_zombie.move(-1,0);
+        _sprite_zombie.move(-4,0);
         _estado=ESTADOS::QUIETO;
 
         break;

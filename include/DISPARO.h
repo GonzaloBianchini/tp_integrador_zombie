@@ -18,6 +18,7 @@ class Disparo : public Colisionable, public sf::Drawable
 {
     public:
         Disparo(TIPO tipo,sf::Vector2f pos,bool direct);
+        Disparo();
         virtual ~Disparo();
 
         void draw(sf::RenderTarget& target,sf::RenderStates states) const override; //reescribimos el metodo DRAW por haberlo heredado de DRAWABLE

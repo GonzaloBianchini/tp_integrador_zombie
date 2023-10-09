@@ -34,7 +34,7 @@ void Shoot_Fire_Prueba::init()
     _height_texture=16;
     _first_frame_of_sheet=sf::IntRect(106,173,_width_texture,_height_texture);
     _end_of_frames_sheet=186;
-    _damage=3;
+    //_damage=3;
     _speed={0.f,0.f};
     _shoot_sprite.setPosition(300,500);
 }
