@@ -6,6 +6,8 @@
 #include<cstdlib>       //para rand y srand
 #include <ctime>        //para time
 
+//prueba commit
+
 using namespace std;
 
 int main()
